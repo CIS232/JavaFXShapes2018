@@ -1,6 +1,7 @@
 package edu.cis232.animation.example2;
 
 import javafx.animation.Animation;
+import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
@@ -51,9 +52,10 @@ public class RotateExampleApp extends Application{
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
-		RotateTransition rotateAnim = new RotateTransition(Duration.seconds(5), pane);
+		RotateTransition rotateAnim = new RotateTransition(Duration.seconds(0.5), pane);
 		rotateAnim.setByAngle(360);
 		rotateAnim.setCycleCount(Animation.INDEFINITE);
+		rotateAnim.setInterpolator(Interpolator.LINEAR);
 		rotateAnim.play();
 	}
 }
